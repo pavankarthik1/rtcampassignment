@@ -72,15 +72,8 @@ var check = function() {
 				<td>Email</td>
 				<td><input type="Email" name="email" id="email" required placeholder="Enter Email" class="loginbox"></td>
 			</tr>
-			<tr>
-				<td>Password</td>
-				<td><input type="Password" name="pass" id="password" placeholder="Enter Password" class="loginbox" onkeyup="check();" required></td>
-			</tr>
-			<tr>
-				<td>Confirm Password</td>
-				<td><input type="Password" name="pass1" id="confirm_password" placeholder="Confirm Password" onkeyup="check();"  class="loginbox" required></td>
-				<span id="message"></span>
-			</tr>
+			
+		
 			<tr>
 				<td >Sex</td>
 				<td>
@@ -90,20 +83,9 @@ var check = function() {
 		</select>
 				</td>
 			</tr>
-			<tr>
-				<td>
-					PhoneNumber
-				</td>
-				<td><input type="number" id="phone" name="Phone" placeholder="Enter PhoneNumber" required></td>
-			</tr>
-			<tr>
-				<td>Date of Birth</td>
 			
-			<td><input type="Date" id="dob" name="dob" required></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="che" required>Remember me</td>
-			</tr>
+			
+			
 			<tr>
 				<td><input type="submit" name="submit" class="loginbox" required style="cursor: pointer;
       border: none;
