@@ -23,10 +23,10 @@ var check = function() {
 	</script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
-	<body class=bg>
+	<body background="unsplash01.jpg" height>
 		<H1>Please Fill The Form To Create an account</H1>
 	<div style="width: 390px;
-    height: 590px;
+    height: 390px;
     
     color: #fff;
     top: 50%;
