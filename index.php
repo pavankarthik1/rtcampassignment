@@ -74,15 +74,7 @@ var check = function() {
 			</tr>
 			
 		
-			<tr>
-				<td >Sex</td>
-				<td>
-					<select name="Sex" style="background: transparent; outline: none; height: 40px;" required>
-			<option value="Male">Male</option>
-			<option value="Female">Female</option>
-		</select>
-				</td>
-			</tr>
+			
 			
 			
 			
