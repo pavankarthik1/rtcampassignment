@@ -1,26 +1,123 @@
 <?php
 ?>
- <form >
-  <div class="container">
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
+<html>
+<head>
+	<title>Expedition
+		
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+	</title>
+	<script type="text/javascript">
+		
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+var check = function() {
+ if (document.getElementById('password').value ==
+   document.getElementById('confirm_password').value) {
+   document.getElementById('message').style.color = 'green';
+   document.getElementById('message').innerHTML = '&#10004';
+ } else {
+   document.getElementById('message').style.color= 'red';
 
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-    <hr>
-
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <button type="submit" class="registerbtn">Register</button>
-  </div>
-
-  <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
-  </div>
-</form> 
+   document.getElementById('message').innerHTML = '&#10006';
+ }
+}
+	</script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body background="unsplash01.jpg">
+		<H1>Please Fill The Form To Create an account</H1>
+	<div style="width: 390px;
+    height: 590px;
+    
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    background: linear-gradient(to bottom, #00ffcc,#ccccff);
+                border-radius: 10px;">
+		<form action="signup.php" method="get">
+            <center><img src="avatar.png" style="width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);"></center>
+			<table width="50%">
+				<tr>
+			<td></td>
+			</tr>
+			<tr>
+				<td>Firstname</td>
+				<td><input type="text" id= "fname" name="fname" placeholder="Firstname" class="loginbox" style="border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;" required></td>
+			</tr>
+			<tr>
+				<td>Lastname</td>
+				<td><input type="text" name="lname" id= "lname" placeholder=" Lastname" class="loginbox" style="border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;"required value=""></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="Email" name="email" id="email" required placeholder="Enter Email" class="loginbox"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="Password" name="pass" id="password" placeholder="Enter Password" class="loginbox" onkeyup="check();" required></td>
+			</tr>
+			<tr>
+				<td>Confirm Password</td>
+				<td><input type="Password" name="pass1" id="confirm_password" placeholder="Confirm Password" onkeyup="check();"  class="loginbox" required></td>
+				<span id="message"></span>
+			</tr>
+			<tr>
+				<td >Sex</td>
+				<td>
+					<select name="Sex" style="background: transparent; outline: none; height: 40px;" required>
+			<option value="Male">Male</option>
+			<option value="Female">Female</option>
+		</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					PhoneNumber
+				</td>
+				<td><input type="number" id="phone" name="Phone" placeholder="Enter PhoneNumber" required></td>
+			</tr>
+			<tr>
+				<td>Date of Birth</td>
+			
+			<td><input type="Date" id="dob" name="dob" required></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="che" required>Remember me</td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="submit" class="loginbox" required style="cursor: pointer;
+      border: none;
+    outline: none;
+    height: 40px;
+    width: 120px;
+   
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    color: #000;" value="submit"></td>
+			</tr>
+			</table>
+		</form>
+	</div>
+	</body>
+</html>
