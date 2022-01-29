@@ -10,7 +10,7 @@ body{
 
 .bg {
   /* The image used */
-
+    background-image:=url{"unsplash01.jpg"};
 
   /* Full height */
   height: 100%;
