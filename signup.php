@@ -13,6 +13,7 @@ $SERVER="remotemysql.com";
 VALUES ('$fname','$lname','$mail')";
 if ($con->query($sql) === TRUE) {
   echo "Verification Mail sent succuessfully";
+    mail('pavankarthik961@gmail.com','Hii','Test');
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
