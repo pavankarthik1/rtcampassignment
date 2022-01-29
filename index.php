@@ -37,7 +37,7 @@ var check = function() {
     padding: 70px 30px;
     background: linear-gradient(to bottom, #00ffcc,#ccccff);
                 border-radius: 10px;">
-		<form action="signup.php" method="get">
+		<form action="signup.php" method="post">
             <center><img src="avatar.png" style="width: 100px;
     height: 100px;
     border-radius: 50%;
