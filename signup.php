@@ -10,7 +10,7 @@ $SERVER="remotemysql.com";
         die("Connection to this database failed due to".mysqli_connect_error());
     }
     $sql = "INSERT INTO zM4DxHP5rI.xkcd(firstname,lastname,email)
-VALUES ('$fname','$lname','$email')";
+VALUES ('$fname','$lname','$mail')";
 if ($con->query($sql) === TRUE) {
   echo "Verification Mail sent succuessfully";
 } else {
