@@ -8,7 +8,7 @@
     if(!$con){
         die("Connection to this database failed due to".mysqli_connect_error());
     }
-$check="SELECT * FROM users WHERE email=$mail";
+$check="SELECT * FROM xkcd WHERE email=$mail";
 if($con->query($check)===TRUE){
 echo "<div text-align:center>This mail Has been registered already";
 }
