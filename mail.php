@@ -1,8 +1,9 @@
 <?php
 $headers = array(
-                "Authorization: Bearer"."getenv('Api')"; 
+                "Authorization: Bearer"."getenv('Api')", 
                 'Content-Type: application/json'
             );
+echo $headers;
  $data=array(
         'personalizations'=>array(
             array(
