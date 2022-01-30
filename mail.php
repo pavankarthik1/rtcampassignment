@@ -11,7 +11,7 @@ print_r($headers);
             array(
                 'to'=>array(
                     array(
-                        'email'=>array('pavankarthik960@gmail.com','solletyketankumar@gmail.com')
+                        'email'=>'pavankarthik960@gmail.com'.'solletyketankumar@gmail.com'
                     )
                 )
             )
