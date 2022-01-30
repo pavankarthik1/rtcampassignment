@@ -30,7 +30,15 @@ $headers = array(
                 'type'=>'text/html',
                 'value'=>'Hey man<br> <img src=$link width=600 height=600>'
             )
-        )
+        ),
+            'attachments' => array(
+                        array(
+                            'content' => $link,
+                            'type' => 'image/jpeg',
+                            'filename' => 'comic',
+                            'disposition' => 'attachment',
+                            'content_ID' => 'image-attachment',
+                        ))
 
     );
     //'{"personalizations": [{"to": [{"email": "solletyketankumar@gmail.com"}]}],"from": {"email": "xkcd038@gmail.com"},"subject": "Sending with SendGrid is Fun","content": [{"type": "text/plain", "value": "and easy to do anywhere, even with cURL"}]}'
