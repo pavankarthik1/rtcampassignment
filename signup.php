@@ -8,9 +8,24 @@
     if(!$con){
         die("Connection to this database failed due to".mysqli_connect_error());
     }
-
+$check="SELECT * FROM users WHERE email=$mail";
+if($con->query($check)===TRUE){
+    ?>
+<style>
+.myDiv {
+  border: 5px outset red;
+  background-color: lightblue;    
+  text-align: center;
+}
+</style>
+<div class="myDiv">
+  <h1>This Mail has been registered already </h1>
+</div>
+<?php
+}
     $sql = "INSERT INTO xkcd(firstname,lastname,email,verifykey)
 VALUES ('$fname','$lname','$mail','$verifykey')";
+
 if ($con->query($sql) === TRUE) {
     echo "Hello";
     echo getenv('api');
