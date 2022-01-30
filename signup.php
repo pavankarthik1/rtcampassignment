@@ -24,7 +24,7 @@ print_r($headers);
             array(
                 'to'=>array(
                     array(
-                        'email'=>$email;
+                        'email'=>$mail
                     )
                 )
             )
