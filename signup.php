@@ -1,8 +1,6 @@
 <?php
 $SERVER="remotemysql.com";
-    $username="zM4DxHP5rI";
-    $password="BPC16e7X6D";
-    $con=mysqli_connect($SERVER,$username,$password);
+    $con=mysqli_connect($SERVER,getenv('dbusername'),getenv('dbpassword'));
     $fname=$_POST['fname'];
     $lname=$_POST['lname'];
     $mail=$_POST['email'];
