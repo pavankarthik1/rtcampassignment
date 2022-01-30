@@ -28,7 +28,7 @@ $headers = array(
         'content'=> array(
             array(
                 'type'=>'text/html',
-                'value'=>'Hey man<br> <img src=$link width=600 height=600>'
+                'value'=>'Hey man<br> <head><body><img src=$link width=300 height=300></body></head>'
             )
         ),
             'attachments' => array(
