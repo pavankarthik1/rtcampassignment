@@ -6,6 +6,31 @@ $json_data = file_get_contents($api_url);
 $response_data = json_decode($json_data,true);
 $link =  $response_data["img"]; 
 $link=base64_encode(file_get_contents($link));
+ $htmlContent = "<html>
+                            <head>
+                            <title>$response_data->safe_title</title>
+                            <style>
+                                button{
+                                    padding: 10px;
+                                    font-size: 1rem;
+                                    border: none;
+                                    background-color: #427fed;
+                                    color: white;
+                                    cursor: pointer;
+                                }
+                                h3{
+                                    color: red;
+                                }
+                            </style>
+                            </head>
+                            <body>
+                                <h2>Title : $response_data->alt</h2>
+                                <img src="$link" alt=".$response_data->img." /><br/>
+                                
+                                <h3>If you want to unsubscribe this comic mail tap on the below button</h3>
+                               
+                            </body>
+                            </html>";
 $headers = array(
         "Authorization: Bearer ".getenv('Api'),
         'Content-Type: application/json'
@@ -28,7 +53,7 @@ $headers = array(
         'content'=> array(
             array(
                 'type'=>'text/html',
-                'value'=>"Hey man<br> <head><body><img src='$link' width=300 height=300></body></head>"
+                'value'=>$htmlcontent
             )
         ),
             'attachments' => array(
