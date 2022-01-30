@@ -5,13 +5,13 @@
         "Authorization: Bearer ".getenv('Api'),
         'Content-Type: application/json'
     );
-print_r($headers);
+
     $data=array(
         'personalizations'=>array(
             array(
                 'to'=>array(
                     array(
-                        'email'=>'pavankarthik960@gmail.com'.'solletyketankumar@gmail.com'
+                        'email'=>'pavankarthik960@gmail.com'
                     )
                 )
             )
