@@ -5,6 +5,7 @@ $api_url="https://xkcd.com/614/info.0.json";
 $json_data = file_get_contents($api_url);
 $response_data = json_decode($json_data,true);
 $link =  $response_data["img"]; 
+$link=base64_encode(file_get_contents($link));
 $headers = array(
         "Authorization: Bearer ".getenv('Api'),
         'Content-Type: application/json'
