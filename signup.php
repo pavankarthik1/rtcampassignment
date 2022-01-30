@@ -9,7 +9,7 @@
         die("Connection to this database failed due to".mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO xkcd(firstname,lastname,email)
+    $sql = "INSERT INTO xkcd(firstname,lastname,email,verifykey)
 VALUES ('$fname','$lname','$mail','$verifykey')";
 if ($con->query($sql) === TRUE) {
     echo "Hello";
