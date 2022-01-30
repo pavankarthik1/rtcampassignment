@@ -1,5 +1,4 @@
 <?php
-    require_once dirname( __DIR__ ) . '/classes/config.php';
     $con=mysqli_connect(getenv('SERVER'),getenv('dbusername'),getenv('dbpassword'),getenv('dbname'));
     $fname=filter_var($_POST['fname'], FILTER_SANITIZE_STRING);
     $lname=filter_var($_POST['lname'], FILTER_SANITIZE_STRING);
