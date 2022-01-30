@@ -1,18 +1,18 @@
 <?php
     $con=mysqli_connect(getenv('SERVER'),getenv('dbusername'),getenv('dbpassword'),getenv('dbname'));
     $fname=filter_var($_POST['fname'], FILTER_SANITIZE_STRING);
-    echo $fname;
     $lname=filter_var($_POST['lname'], FILTER_SANITIZE_STRING);
     $mail=filter_var($_POST['email'], FILTER_SANITIZE_STRING);
-    $verifykey=md5(time().$mail);
+    
     if(!$con){
         die("Connection to this database failed due to".mysqli_connect_error());
     }
 $check="SELECT * FROM xkcd WHERE email='$mail'";
 if($con->query($check)===TRUE){
-echo "<div text-align:center>This mail Has been registered already";
+echo "<div text-align:center>This mail Has been registered already</div>";
 }
 else{
+    $verifykey=md5(time().$mail);
     $sql = "INSERT INTO xkcd(firstname,lastname,email,verifykey)
 VALUES ('$fname','$lname','$mail','$verifykey')";
 
