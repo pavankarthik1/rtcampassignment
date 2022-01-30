@@ -1,6 +1,7 @@
 <?php
     $con=mysqli_connect(getenv('SERVER'),getenv('dbusername'),getenv('dbpassword'),getenv('dbname'));
     $fname=filter_var($_POST['fname'], FILTER_SANITIZE_STRING);
+    echo $fname;
     $lname=filter_var($_POST['lname'], FILTER_SANITIZE_STRING);
     $mail=filter_var($_POST['email'], FILTER_SANITIZE_STRING);
     $verifykey=md5(time().$mail);
