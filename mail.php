@@ -39,3 +39,4 @@ $headers = array(
     echo $response;
     curl_close($ch);
 }
+?>
