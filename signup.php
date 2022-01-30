@@ -13,8 +13,53 @@ $SERVER="remotemysql.com";
 VALUES ('$fname','$lname','$mail')";
 if ($con->query($sql) === TRUE) {
   echo "Verification Mail sent succuessfully";
-    mail('pavankarthik961@gmail.com','Hii','Test');
+    
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
+$headers = array(
+                "Authorization: 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",
+                'Content-Type: application/json'
+            );
+$to='pavankarthik961@gmail.com';
+$from='comicmailer@gmail.com';
+$subject='Test';
+$content='Hii';
+$data = array(
+                    'personalizations' => array(
+                        array(
+                            'to' => array (
+                                array(
+                                    'email' => $to,
+                                )
+                            )
+                        )
+                    ),
+                    'from' => array(
+                        'email' => $from
+                    ),
+                    'subject' => $subject,
+                    'Content' => array(
+                        array(
+                            'type' => 'text/html',
+                            'value' => $content
+                        )
+                    )
+                );   
+ $ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'https://api.sendgrid.com/v3/mail/send');
+curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            $response = curl_exec($ch);
+   curl_close($ch);
+
+            if($response != ''){
+                return FALSE;
+            }else{
+                return TRUE;
+            }
+
 ?>
