@@ -7,9 +7,12 @@
     if(!$con){
         die("Connection to this database failed due to".mysqli_connect_error());
     }
-$check="SELECT * FROM xkcd WHERE email='$mail'";
-if($con->query($check)===TRUE){
-echo "This mail Has been registered already";
+$stmt = $con->prepare('SELECT * FROM users WHERE email = ?');
+            $stmt->bind_param('s',$email);
+            $stmt->execute();
+$result = $stmt->get_result();
+if($result->num_rows != 0){
+echo "This mail has been registered already";
 }
 else{
     $verifykey=md5(time().$mail);
