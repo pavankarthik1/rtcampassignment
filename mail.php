@@ -3,7 +3,7 @@ $headers = array(
                 "Authorization: Bearer"."getenv('Api')", 
                 'Content-Type: application/json'
             );
-echo $headers;
+echo "Hello Mail";
  $data=array(
         'personalizations'=>array(
             array(
