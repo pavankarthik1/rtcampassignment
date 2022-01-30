@@ -1,7 +1,7 @@
 <?php
-echo "Hello Mail";
+
 $headers = array(
-                "Authorization: Bearer".getenv('Api'), 
+                "Authorization: Bearer ".getenv('Api'), 
                 'Content-Type: application/json'
             );
 
