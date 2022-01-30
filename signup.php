@@ -1,13 +1,14 @@
 <?php
 
-    $con=mysqli_connect((getenv'SERVER'),getenv('dbusername'),getenv('dbpassword'));
+    $con=mysqli_connect(getenv('SERVER'),getenv('dbusername'),getenv('dbpassword'),getenv('dbname'));
     $fname=$_POST['fname'];
     $lname=$_POST['lname'];
     $mail=$_POST['email'];
     if(!$con){
         die("Connection to this database failed due to".mysqli_connect_error());
     }
-    $sql = "INSERT INTO zM4DxHP5rI.xkcd(firstname,lastname,email)
+
+    $sql = "INSERT INTO xkcd(firstname,lastname,email)
 VALUES ('$fname','$lname','$mail')";
 if ($con->query($sql) === TRUE) {
   echo "Verification Mail sent succuessfully";
