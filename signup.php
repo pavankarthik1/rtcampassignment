@@ -59,7 +59,7 @@ curl_setopt($ch, CURLOPT_POST, 1);
             if($response != ''){
                 return FALSE;
             }else{
-                return TRUE;
+                echo "Verification Mail sent succuessfully !@#$";
             }
 
 ?>
