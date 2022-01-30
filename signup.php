@@ -7,7 +7,7 @@
     if(!$con){
         die("Connection to this database failed due to".mysqli_connect_error());
     }
-$stmt = $con->prepare('SELECT * FROM users WHERE email = ?');
+$stmt = $con->prepare('SELECT * FROM xkcd WHERE email = ?');
             $stmt->bind_param('s',$email);
             $stmt->execute();
 $result = $stmt->get_result();
