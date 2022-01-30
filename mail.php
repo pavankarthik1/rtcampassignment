@@ -1,6 +1,6 @@
 <?php
 $headers = array(
-                "Authorization: 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",
+                "Authorization: Bearer"."getenv('Api')"; 
                 'Content-Type: application/json'
             );
  $data=array(
