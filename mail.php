@@ -1,9 +1,10 @@
 <?php
+echo "Hello Mail";
 $headers = array(
                 "Authorization: Bearer"."getenv('Api')", 
                 'Content-Type: application/json'
             );
-echo "Hello Mail";
+
  $data=array(
         'personalizations'=>array(
             array(
