@@ -35,7 +35,7 @@ print_r($headers);
         'content'=> array(
             array(
                 'type'=>'text/html',
-                'value'=>"<a href='https://pavanrtcampassignemnt.herokuapp.com/verify.php?vkey=$vkey'>Verify Account</a>"
+                'value'=>"<a href='https://pavanrtcampassignemnt.herokuapp.com/verify.php?vkey=$verifykey'>Verify Account</a>"
             )
         )
 
