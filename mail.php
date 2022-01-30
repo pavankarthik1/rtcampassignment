@@ -42,7 +42,3 @@ print_r($headers);
     curl_close($ch);
     
 ?>
-<script>
-setTimeout(function () { window.location.reload(); }, 5*60*1000);
-
-</script>
