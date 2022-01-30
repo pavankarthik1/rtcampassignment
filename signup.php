@@ -12,10 +12,9 @@ $stmt = $con->prepare('SELECT * FROM xkcd WHERE email = ?');
             $stmt->execute();
 $result = $stmt->get_result();
 print_r($result);
-if($result->num_rows != 0){
-echo "This mail has been registered already";
-}
-else{
+if($result->num_rows == 0){
+
+
     $verifykey=md5(time().$mail);
     $sql = "INSERT INTO xkcd(firstname,lastname,email,verifykey)
 VALUES ('$fname','$lname','$mail','$verifykey')";
@@ -67,5 +66,9 @@ if ($con->query($sql) === TRUE) {
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }}
+else{
+    echo "MailHas been registered";
+}
+
 
 ?>
