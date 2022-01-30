@@ -10,30 +10,20 @@
     }
 $check="SELECT * FROM users WHERE email=$mail";
 if($con->query($check)===TRUE){
-    ?>
-<style>
-.myDiv {
-  border: 5px outset red;
-  background-color: lightblue;    
-  text-align: center;
+echo "<div text-align:center>This mail Has been registered already";
 }
-</style>
-<div class="myDiv">
-  <h1>This Mail has been registered already </h1>
-</div>
-<?php
-}
+else{
     $sql = "INSERT INTO xkcd(firstname,lastname,email,verifykey)
 VALUES ('$fname','$lname','$mail','$verifykey')";
 
 if ($con->query($sql) === TRUE) {
-    echo "Hello";
+    //echo "Hello";
     echo getenv('api');
     $headers = array(
         "Authorization: Bearer ".getenv('Api'),
         'Content-Type: application/json'
     );
-print_r($headers);
+
     $data=array(
         'personalizations'=>array(
             array(
@@ -72,6 +62,6 @@ print_r($headers);
 
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
-}
+}}
 
 ?>
