@@ -26,7 +26,6 @@ echo "Hello Mail";
         )
 
     );
-    echo $key;
     //'{"personalizations": [{"to": [{"email": "solletyketankumar@gmail.com"}]}],"from": {"email": "xkcd038@gmail.com"},"subject": "Sending with SendGrid is Fun","content": [{"type": "text/plain", "value": "and easy to do anywhere, even with cURL"}]}'
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'https://api.sendgrid.com/v3/mail/send');
