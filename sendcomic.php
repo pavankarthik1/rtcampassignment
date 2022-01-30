@@ -27,7 +27,7 @@ $headers = array(
         'content'=> array(
             array(
                 'type'=>'text/html',
-                'value'=>'Hey man<br> <img src=$link>'
+                'value'=>'Hey man<br> <img src=$link width=600 height=600>'
             )
         )
 
