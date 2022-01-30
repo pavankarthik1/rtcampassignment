@@ -1,9 +1,9 @@
 <?php
 
     $con=mysqli_connect(getenv('SERVER'),getenv('dbusername'),getenv('dbpassword'),getenv('dbname'));
-    $fname=$_POST['fname'];
-    $lname=$_POST['lname'];
-    $mail=$_POST['email'];
+    $fname=filter_var($_POST['fname'], FILTER_SANITIZE_STRING);
+    $lname=filter_var($_POST['lname'], FILTER_SANITIZE_STRING);
+    $mail=filter_var($_POST['email'], FILTER_SANITIZE_STRING);
     if(!$con){
         die("Connection to this database failed due to".mysqli_connect_error());
     }
