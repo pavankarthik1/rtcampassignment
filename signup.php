@@ -9,7 +9,7 @@
     }
 $check="SELECT * FROM xkcd WHERE email='$mail'";
 if($con->query($check)===TRUE){
-echo "<div text-align:center>This mail Has been registered already</div>";
+echo "This mail Has been registered already";
 }
 else{
     $verifykey=md5(time().$mail);
