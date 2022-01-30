@@ -1,11 +1,12 @@
 <?php
-
-$headers = array(
-                "Authorization: Bearer ".getenv('Api'), 
-                'Content-Type: application/json'
-            );
-
- $data=array(
+    echo "Hello";
+    echo getenv('api');
+    $headers = array(
+        "Authorization: Bearer ".getenv('api'),
+        'Content-Type: application/json'
+    );
+print_r($headers);
+    $data=array(
         'personalizations'=>array(
             array(
                 'to'=>array(
@@ -38,5 +39,5 @@ $headers = array(
     $response = curl_exec($ch);
     echo $response;
     curl_close($ch);
-}
+    
 ?>
