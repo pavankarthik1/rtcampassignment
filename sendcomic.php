@@ -25,7 +25,7 @@ $link=base64_encode(file_get_contents($link));
                             </head>
                             <body>
                                 <h2>Title : $response_data->alt</h2>
-                                <img src='$link' /><br/>
+                                <img src=$link/><br/>
                                 
                                 <h3>If you want to unsubscribe this comic mail tap on the below button</h3>
                                
