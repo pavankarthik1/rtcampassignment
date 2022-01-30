@@ -11,6 +11,7 @@ $stmt = $con->prepare('SELECT * FROM xkcd WHERE email = ?');
             $stmt->bind_param('s',$email);
             $stmt->execute();
 $result = $stmt->get_result();
+print_r($result);
 if($result->num_rows != 0){
 echo "This mail has been registered already";
 }
