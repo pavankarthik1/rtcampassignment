@@ -2,7 +2,7 @@
     echo "Hello";
     echo getenv('api');
     $headers = array(
-        "Authorization: Bearer ".getenv('api'),
+        "Authorization: Bearer ".getenv('Api'),
         'Content-Type: application/json'
     );
 print_r($headers);
