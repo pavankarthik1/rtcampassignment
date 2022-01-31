@@ -16,11 +16,5 @@ if ($con->query($sql) === TRUE) {
 $from='pavankarthik960@gmail.com';
 $message="<a href='https://pavanrtcampassignemnt.herokuapp.com/verify.php?vkey=$verifykey'>Verify Account</a>";
  $email1 = SendMail($from,$mail,'Email verification for comic book',$message,NULL);
-if($email1 == FALSE){
-                    $stmt = $con->prepare('DELETE FROM users WHERE email = ?');
-                    $stmt->bind_param('s',$email);
-                    $stmt->execute();
-                }else{
-                    $mail_success = 'Verification mail has been sent <br>(Note: The email would be in spam or other section)';
-}
+
 ?>
