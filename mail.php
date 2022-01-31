@@ -1,7 +1,8 @@
 <?php
     class SendEmail{
 
-        public static function SendMail($from,$to,$subject,$content,$key,$attachment){
+        public static function SendMail($from,$to,$subject,$content,$attachment){
+
     
     $headers = array(
         "Authorization: Bearer ".getenv('Api'),
