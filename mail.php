@@ -7,8 +7,7 @@
     $to="pavankarthik960@gmail.com";
     $subject="Hii";
     $content="Hey man";
-    $attachment="Null";
-        
+    $attachment=Null;
     $headers = array(
         "Authorization: Bearer ".getenv('Api'),
         'Content-Type: application/json'
