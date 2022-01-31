@@ -15,7 +15,7 @@ while($row = mysqli_fetch_assoc($sql)) {
 <h2>hello user</h2>
 <br><img src='$link'/>
 <br>
-please click here for<a href='https://pavanrtcampassignemnt.herokuapp.com/unsubscribe.php?vkey=$row['verifykey']'> unsubscribe</a>
+please click here for<a href='https://pavanrtcampassignemnt.herokuapp.com/unsubscribe.php?vkey='$key''> unsubscribe</a>
 </body>
 </head>";
         echo $row['email'];
