@@ -21,6 +21,6 @@ please click here for unsubscribe<a href='https://pavanrtcampassignemnt.herokuap
 </body>
 </head>"
  $recipients[] = $row['emailid'];
- SendMail(getenv('emailfrom'),$row['email'],'comic book',$message,link1);
+ SendMail(getenv('emailfrom'),$row['email'],'comic book',$message,$link1);
 }
 ?>
