@@ -13,8 +13,8 @@
 VALUES ('$fname','$lname','$mail','$verifykey')";
 if ($con->query($sql) === TRUE) {
     echo "Verification Mail Sent Successfully";}
-$from='pavankarthik960@gmail.com';
+
 $message="<a href='https://pavanrtcampassignemnt.herokuapp.com/verify.php?vkey=$verifykey'>Verify Account</a>";
- $email1 = SendMail($from,$mail,'Email verification for comic book',$message,NULL);
+ $email1 = SendMail(getenv('emailfrom'),$mail,'Email verification for comic book',$message,NULL);
 
 ?>
