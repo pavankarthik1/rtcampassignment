@@ -78,11 +78,7 @@
             $response = curl_exec($ch);
             curl_close($ch);
 
-            if($response != ''){
-                return FALSE;
-            }else{
-                return TRUE;
-            }
+          
         //}
     //}
 ?>
