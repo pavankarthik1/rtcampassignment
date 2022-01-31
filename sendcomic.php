@@ -13,8 +13,9 @@ while($row = mysqli_fetch_assoc($sql)) {
         $key=$row['verifykey'];
         $name=$row['fname'].$row['lname'];
         $message="<head><body>
-<h2>hello $name</h2>
+<h2>hello '$name'</h2>
 <br><img src='$link'/>
+<br>
 please click here for<a href='https://pavanrtcampassignemnt.herokuapp.com/unsubscribe.php?vkey=$key'> unsubscribe</a>
 </body>
 </head>";
