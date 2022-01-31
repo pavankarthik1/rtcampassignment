@@ -11,6 +11,6 @@
     $sql = "INSERT INTO xkcd(firstname,lastname,email,verifykey)
 VALUES ('$fname','$lname','$mail','$verifykey')";
 $from='pavankarthik960@gmail.com';
-$message=<a href='https://pavanrtcampassignemnt.herokuapp.com/verify.php?vkey=$verifykey'>Verify Account</a>";
+$message="<a href='https://pavanrtcampassignemnt.herokuapp.com/verify.php?vkey=$verifykey'>Verify Account</a>";
  $mail = SendEmail::SendMail($from,$mail,'Email verification for comic book',$message,NULL);
 ?>
