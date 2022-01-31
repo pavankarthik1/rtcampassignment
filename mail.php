@@ -3,7 +3,7 @@
 
       //  public static function SendMail($from,$to,$subject,$content,$attachment){
 
-    $from="pavankarthik960@gmail.com";
+    $from="xkcd038@gmail.com";
     $to="pavankarthik960@gmail.com";
     $subject="Hii";
     $content="Hey man";
