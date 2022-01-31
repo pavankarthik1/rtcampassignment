@@ -17,7 +17,7 @@ while($row = mysql_fetch_array($sql)) {
 <br><img src='$link'/>
 please click here for unsubscribe<a href='https://pavanrtcampassignemnt.herokuapp.com/unsubscribe.php?vkey=$key></a>
 </body>
-</head>"
+</head>";
  SendMail(getenv('emailfrom'),$row['email'],'comic book',$message,$link1);
 }
 ?>
