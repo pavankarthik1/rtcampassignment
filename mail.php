@@ -19,7 +19,7 @@
                         array(
                             'to' => array (
                                 array(
-                                    'email' => $to,
+                                    'email' => $to
                                 )
                             )
                         )
@@ -41,7 +41,7 @@
                         array(
                             'to' => array (
                                 array(
-                                    'email' => $to,
+                                    'email' => $to
                                 )
                             )
                         )
@@ -62,7 +62,7 @@
                             'type' => 'image/jpeg',
                             'filename' => 'comic',
                             'disposition' => 'attachment',
-                            'content_ID' => 'image-attachment',
+                            'content_ID' => 'image-attachment'
                         )
                     ) 
                 );
