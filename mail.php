@@ -1,7 +1,7 @@
 <?php
-    //class SendEmail{
+ 
 
-      //  public static function SendMail($from,$to,$subject,$content,$attachment){
+     function SendMail($from,$to,$subject,$content,$attachment){
 
     $from="xkcd038@gmail.com";
     $to="pavankarthik960@gmail.com";
@@ -78,6 +78,6 @@
             curl_close($ch);
 
           
-        //}
-    //}
+        }
+    
 ?>
