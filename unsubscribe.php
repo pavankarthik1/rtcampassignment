@@ -4,6 +4,7 @@ if(isset($_GET['vkey']))
     {
         $vkey=$_GET['vkey'];
         $result=$con->query("select `activation`,`verifykey` from `xkcd` where `activation`= 1 and `verifykey`='$vkey'");
+        print_r($result);
         if($result->num_rows==1)
         {
             $update =$con->query("DELETE FROM `xkcd` WHERE verifykey='$vkey'");
