@@ -10,48 +10,7 @@
     }
     $sql = "INSERT INTO xkcd(firstname,lastname,email,verifykey)
 VALUES ('$fname','$lname','$mail','$verifykey')";
-if ($con->query($sql) === TRUE) {
-    echo "Hello";
-    echo getenv('api');
-    $headers = array(
-        "Authorization: Bearer ".getenv('Api'),
-        'Content-Type: application/json'
-    );
-print_r($headers);
-    $data=array(
-        'personalizations'=>array(
-            array(
-                'to'=>array(
-                    array(
-                        'email'=>$mail
-                    )
-                )
-            )
-        ),
-        'from'=>array(
-            'email'=>'xkcd038@gmail.com'
-        ),
-        'subject'=>'Email Verifaction',
-        'content'=> array(
-            array(
-                'type'=>'text/html',
-                'value'=>"<a href='https://pavanrtcampassignemnt.herokuapp.com/verify.php?vkey=$verifykey'>Verify Account</a>"
-            )
-        )
-    );
-    //'{"personalizations": [{"to": [{"email": "solletyketankumar@gmail.com"}]}],"from": {"email": "xkcd038@gmail.com"},"subject": "Sending with SendGrid is Fun","content": [{"type": "text/plain", "value": "and easy to do anywhere, even with cURL"}]}'
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://api.sendgrid.com/v3/mail/send');
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    $response = curl_exec($ch);
-    echo $response;
-    curl_close($ch);
-    
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-}
+$from='pavankarthik960@gmail.com';
+$message=<a href='https://pavanrtcampassignemnt.herokuapp.com/verify.php?vkey=$verifykey'>Verify Account</a>";
+ $mail = SendEmail::SendMail($from,$mail,'Email verification for comic book',$message,NULL);
 ?>
