@@ -8,8 +8,8 @@ $json_data = file_get_contents($api_url);
 $response_data = json_decode($json_data,true);
 $link =  $response_data["img"]; 
 $link1=base64_encode(file_get_contents($link));
-$sql = $con->mysql_query("select email from xkcd where activation = 1");
-while($row = mysql_fetch_assoc($sql)) {
+$sql = $con->query("select email from xkcd where activation = 1");
+while($row = mysqli_fetch_assoc($sql)) {
         $key=$row['verifykey'];
         $name=$row['fname'].$row['lname'];
         $message="<head><body>
