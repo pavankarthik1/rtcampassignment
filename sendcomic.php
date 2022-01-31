@@ -11,7 +11,6 @@ $link1=base64_encode(file_get_contents($link));
 $sql = $con->query("select email from xkcd where activation = 1");
 while($row = mysqli_fetch_assoc($sql)) {
         $key=$row['verifykey'];
-        echo $key;
         $message="<head><body>
 <h2>hello user</h2>
 <br><img src='$link'/>
