@@ -8,12 +8,12 @@ $json_data = file_get_contents($api_url);
 $response_data = json_decode($json_data,true);
 $link =  $response_data["img"]; 
 $link1=base64_encode(file_get_contents($link));
-$sql = $con->query("select email from xkcd where activation = 1");
+$sql = $con->query("select * from xkcd where activation = 1");
 while($row = mysqli_fetch_assoc($sql)) {
         $key=$row['verifykey'];
-        echo $key;
+        $name=$row['firstname'].['lastname'];
         $message="<head><body>
-<h2>hello user</h2>
+<h2>hello $name</h2>
 <br><img src='$link'/>
 <br>
 please click here for<a href='https://pavanrtcampassignemnt.herokuapp.com/unsubscribe.php?vkey='$key''> unsubscribe</a>
