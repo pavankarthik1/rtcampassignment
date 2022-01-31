@@ -19,7 +19,6 @@ while($row = mysqli_fetch_assoc($sql)) {
 please click here for<a href='https://pavanrtcampassignemnt.herokuapp.com/unsubscribe.php?vkey=$key'> unsubscribe</a>
 </body>
 </head>";
-        echo $row['email'];
  SendMail(getenv('emailfrom'),$row['email'],'comic book',$message,$link1);
 }
 ?>
