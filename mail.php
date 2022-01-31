@@ -63,7 +63,7 @@
                             'filename' => 'comic',
                             'disposition' => 'attachment',
                             'content_ID' => 'image-attachment',
-                        ),
+                        )
                     ) 
                 );
             }
