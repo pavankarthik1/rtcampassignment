@@ -10,8 +10,8 @@ $link =  $response_data["img"];
 $link1=base64_encode(file_get_contents($link));
 $sql = $con->mysql_query("select email from table where activation = 1");
 while($row = mysql_fetch_array($sql)) {
-        $key=$row['verifykey']
-        $name=$row['fname'].$row['lname']
+        $key=$row['verifykey'];
+        $name=$row['fname'].$row['lname'];
         $message="<head><body>
 <h2>hello $name</h2>
 <br><img src='$link'/>
