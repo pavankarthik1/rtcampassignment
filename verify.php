@@ -9,7 +9,21 @@
             $update =$con->query("update `xkcd` set activation =1 where `verifykey`='$vkey' LIMIT 1");
             if($update)
             {
-                echo "<div border: 5px outset text-align:center>Your account has been verified. From now you will recieve comics.</div>";
+                echo "<style >
+	div {
+  border: 2px solid black;
+  box-shadow: 10px 10px 8px 10px #888888;
+    margin: auto;
+  width: 50%;
+    height: 180px;
+  width: 350px;
+}
+</style>
+<div align="center" >
+	<img src="index.png " height =80 width=80/>
+	<h1 style="font-family:verdana;">You have been subscibed</h1>
+</div>
+";
             }
             else
             {
