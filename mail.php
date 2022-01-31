@@ -1,9 +1,14 @@
 <?php
-    class SendEmail{
+    //class SendEmail{
 
-        public static function SendMail($from,$to,$subject,$content,$attachment){
+      //  public static function SendMail($from,$to,$subject,$content,$attachment){
 
-    
+    $from="pavankarthik960@gmail.com";
+    $to="pavankarthik960@gmail.com";
+    $subject="Hii";
+    $content="Hey man";
+    $attachment="Null";
+        
     $headers = array(
         "Authorization: Bearer ".getenv('Api'),
         'Content-Type: application/json'
@@ -78,6 +83,6 @@
             }else{
                 return TRUE;
             }
-        }
-    }
+        //}
+    //}
 ?>
