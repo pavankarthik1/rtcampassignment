@@ -1,4 +1,5 @@
 <?php
+include 'mail.php';
 echo "Hello";
 $con=mysqli_connect(getenv('SERVER'),getenv('dbusername'),getenv('dbpassword'),getenv('dbname'));
 $r = rand(1,2500);
@@ -7,52 +8,19 @@ $json_data = file_get_contents($api_url);
 $response_data = json_decode($json_data,true);
 $link =  $response_data["img"]; 
 $link1=base64_encode(file_get_contents($link));
+$sql = $con->mysql_query("select email from table where activation = 1");
+$recipients = array();
 
-$headers = array(
-        "Authorization: Bearer ".getenv('Api'),
-        'Content-Type: application/json'
-    );
-
-    $data=array(
-        'personalizations'=>array(
-            array(
-                'to'=>array(
-                    array(
-                        'email'=>'pavankarthik960@gmail.com'
-                    )
-                )
-            )
-        ),
-        'from'=>array(
-            'email'=>'xkcd038@gmail.com'
-        ),
-        'subject'=>'Hi',
-        'content'=> array(
-            array(
-                'type'=>'text/html',
-                'value'=>"Hey man<br><head><body><img src='$link'/></body></head>"
-            )
-        ),
-            'attachments' => array(
-                        array(
-                            'content' => $link1,
-                            'type' => 'image/jpeg',
-                            'filename' => 'comic',
-                            'disposition' => 'attachment',
-                            'content_ID' => 'image-attachment',
-                        ))
-
-    );
-    //'{"personalizations": [{"to": [{"email": "solletyketankumar@gmail.com"}]}],"from": {"email": "xkcd038@gmail.com"},"subject": "Sending with SendGrid is Fun","content": [{"type": "text/plain", "value": "and easy to do anywhere, even with cURL"}]}'
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://api.sendgrid.com/v3/mail/send');
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    $response = curl_exec($ch);
-    
-
-    curl_close($ch);
+while($row = mysql_fetch_array($sql)) {
+        $key=$row['verifykey']
+        $name=$row['fname'].$row['lname']
+        $message="<head><body>
+<h2>hello $name</h2>
+<br><img src='$link'/>
+please click here for unsubscribe<a href='https://pavanrtcampassignemnt.herokuapp.com/unsubscribe.php?vkey=$key></a>
+</body>
+</head>"
+ $recipients[] = $row['emailid'];
+ SendMail(getenv('emailfrom'),$row['email'],'comic book',$message,link1);
+}
 ?>
