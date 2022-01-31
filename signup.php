@@ -1,4 +1,5 @@
 <?php
+    include 'mail.php';
     $con=mysqli_connect(getenv('SERVER'),getenv('dbusername'),getenv('dbpassword'),getenv('dbname'));
     $fname=filter_var($_POST['fname'], FILTER_SANITIZE_STRING);
     echo $fname;
