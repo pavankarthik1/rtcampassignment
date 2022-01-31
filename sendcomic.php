@@ -11,12 +11,11 @@ $link1=base64_encode(file_get_contents($link));
 $sql = $con->query("select email from xkcd where activation = 1");
 while($row = mysqli_fetch_assoc($sql)) {
         $key=$row['verifykey'];
-        print_r($row['verifykey']);
         $message="<head><body>
 <h2>hello user</h2>
 <br><img src='$link'/>
 <br>
-please click here for<a href='https://pavanrtcampassignemnt.herokuapp.com/unsubscribe.php?vkey=$key'> unsubscribe</a>
+please click here for<a href='https://pavanrtcampassignemnt.herokuapp.com/unsubscribe.php?vkey=$row['verifykey']'> unsubscribe</a>
 </body>
 </head>";
         echo $row['email'];
