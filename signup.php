@@ -7,7 +7,6 @@ if (!$con)
     die("Connection to this database failed due to" . mysqli_connect_error());
 }
 $fname = filter_var($_POST['fname'], FILTER_SANITIZE_STRING);
-echo $fname;
 $lname = filter_var($_POST['lname'], FILTER_SANITIZE_STRING);
 $mail = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
 $query = 'select * from xkcd where email=?';
@@ -47,7 +46,7 @@ VALUES (?,?,?,?)";
                 border-radius: 10px;">
                 <h1>Verification mail sent successfully</h1>
                 </div>';
-        echo "Hello123</br>";
+        
 
         $message = "Please Verify Your mail address for recieving comics<a href='https://pavanrtcampassignemnt.herokuapp.com/verify.php?vkey=$verifykey'>Verify Account</a>";
         $email1 = SendMail(getenv('emailfrom') , $mail, 'Email verification for comic book', $message, NULL);
@@ -55,7 +54,14 @@ VALUES (?,?,?,?)";
 }
 else
 {
-    echo '<div style="width: 200px;
+    echo '<style>body{
+    margin: 0;
+    padding: 0;
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}</style><body background="unsplash01.jpg"></body><div style="width: 200px;
     height: 200px;
     
     color: #fff;
