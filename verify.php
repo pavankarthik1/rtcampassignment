@@ -9,7 +9,14 @@
             $update =$con->query("update `xkcd` set activation =1 where `verifykey`='$vkey' LIMIT 1");
             if($update)
             {
-                echo '
+                echo '<style>body{
+    margin: 0;
+    padding: 0;
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}</style><body background="unsplash01.jpg"></body>
 <div style="width: 200px;
     height: 200px;
     
