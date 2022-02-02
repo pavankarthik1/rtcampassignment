@@ -15,6 +15,7 @@ $stmt = $con->prepare($query);
 $stmt->bind_param('s', $mail);
 $stmt->execute();
 $stmt->store_result();
+echo $stmt->num_rows;
 if ($stmt->num_rows == 0)
 {
     $verifykey = md5(time() . $mail);
