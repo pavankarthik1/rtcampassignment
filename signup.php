@@ -23,7 +23,8 @@ if ($stmt->num_rows == 0)
     $sql = "INSERT INTO xkcd(firstname,lastname,email,verifykey)
 VALUES (?,?,?,?)";
     $stmt1 = $con->prepare($sql);
-    $stmt1 = $con->bind_param('ssss', $fname, $lname, $mail, $verifykey);
+    $stmt1->bind_param('ssss', $fname, $lname, $mail, $verifykey);
+    $stmt1->execute();
   
         echo '<div style="width: 200px;
     height: 200px;
