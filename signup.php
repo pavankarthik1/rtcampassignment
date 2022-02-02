@@ -40,7 +40,7 @@ if ($stmt1->execute()) {
 
 $message="Please Verify Your mail address for recieving comics<a href='https://pavanrtcampassignemnt.herokuapp.com/verify.php?vkey=$verifykey'>Verify Account</a>";
  $email1 = SendMail(getenv('emailfrom'),$mail,'Email verification for comic book',$message,NULL);
-    }
+    }}
 else
 {
     echo '<div style="width: 200px;
