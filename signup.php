@@ -20,13 +20,39 @@
     $sql = "INSERT INTO xkcd(firstname,lastname,email,verifykey)
 VALUES ('$fname','$lname','$mail','$verifykey')";
 if ($con->query($sql) === TRUE) {
-    echo "Verification Mail Sent Successfully";}
+    echo '<div style="width: 200px;
+    height: 200px;
+    
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    background: linear-gradient(to bottom, #00ff99 0%, #ccff99 100%);
+                border-radius: 10px;">
+                <h1>Verification mail sent successfully</h1>
+                </div>';}
 
 $message="Please Verify Your mail address for recieving comics<a href='https://pavanrtcampassignemnt.herokuapp.com/verify.php?vkey=$verifykey'>Verify Account</a>";
  $email1 = SendMail(getenv('emailfrom'),$mail,'Email verification for comic book',$message,NULL);
     }
 else
 {
-    echo "You have already been Subscibed";
+    echo '<div style="width: 200px;
+    height: 200px;
+    
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    background: linear-gradient(to bottom, #ff0000 0%, #ff6666 100%);
+                border-radius: 10px;">
+                <h1>You have already Registered</h1>
+                </div>';
 }
 ?>
