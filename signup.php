@@ -26,7 +26,7 @@ VALUES (?,?,?,?)";
     $stmt1->bind_param('ssss', $fname, $lname, $mail, $verifykey);
     $stmt1->execute();
   
-        echo '<div style="width: 200px;
+        echo '<body background="unsplash01.jpg"></body><div style="width: 200px;
     height: 200px;
     
     color: #fff;
