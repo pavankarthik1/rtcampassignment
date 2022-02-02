@@ -33,8 +33,8 @@ VALUES (?,?,?,?)";
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
-}</style><body background="unsplash01.jpg"></body><div style="width: 200px;
-    height: 200px;
+}</style><body background="unsplash01.jpg"></body><div style="width: 250px;
+    height: 250px;
     
     color: #fff;
     top: 50%;
