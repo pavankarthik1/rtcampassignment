@@ -18,8 +18,10 @@
     $verifykey=md5(time().$mail);
     
     $sql = "INSERT INTO xkcd(firstname,lastname,email,verifykey)
-VALUES ('$fname','$lname','$mail','$verifykey')";
-if ($con->query($sql) === TRUE) {
+VALUES (?,?,?,?)";
+        $stmt1=$con->prepare($sql);
+        $stmt1=$con->bind_param('ssss',$fname,$lname,$mail,$verifykey);
+if ($stmt1->execute()) {
     echo '<div style="width: 200px;
     height: 200px;
     
