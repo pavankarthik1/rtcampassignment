@@ -35,7 +35,7 @@ if ($stmt1->execute()) {
     background: linear-gradient(to bottom, #00ff99 0%, #ccff99 100%);
                 border-radius: 10px;">
                 <h1>Verification mail sent successfully</h1>
-                </div>';}
+                </div>';
 
 $message="Please Verify Your mail address for recieving comics<a href='https://pavanrtcampassignemnt.herokuapp.com/verify.php?vkey=$verifykey'>Verify Account</a>";
  $email1 = SendMail(getenv('emailfrom'),$mail,'Email verification for comic book',$message,NULL);
