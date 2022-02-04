@@ -2,12 +2,6 @@
  
 
      function SendMail($from,$to,$subject,$content,$attachment){
-
-    /*$from="xkcd038@gmail.com";
-    $to="pavankarthik960@gmail.com";
-    $subject="Hii";
-    $content="Hey man";
-    $attachment=Null;*/
     $headers = array(
         "Authorization: Bearer ".getenv('Api'),
         'Content-Type: application/json'
@@ -75,9 +69,6 @@
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             $response = curl_exec($ch);
-            curl_close($ch);
-
-          
-        }
-    
+            curl_close($ch); 
+        }    
 ?>
