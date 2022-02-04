@@ -1,4 +1,5 @@
 <?php
+if(isset($_POST['email'],$_POST['fname'],$_POST['lname'])){
 include 'mail.php';
 $flag = 0;
 $con = mysqli_connect(getenv('SERVER') , getenv('dbusername') , getenv('dbpassword') , getenv('dbname'));
@@ -75,6 +76,6 @@ else
                 border-radius: 10px;">
                 <h1>You have already Registered</h1>
                 </div>';
-}
+}}
 ?>
 
