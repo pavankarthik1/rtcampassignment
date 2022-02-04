@@ -2,7 +2,7 @@
 ?>
 <html>
 <head>
-	<title>Expedition
+	<title>Xkcd Comic Mailer
 		
 
 	</title>
