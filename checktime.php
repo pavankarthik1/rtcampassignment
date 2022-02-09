@@ -15,6 +15,7 @@ $stmt1->bind_result($vas);
 $stmt1->execute();
 $stmt1->fetch();
 echo $vas;
+$vas1=new DateTime($vas);
 //$date1=new DateTime($vas);
 //echo $date1;
 //$date2=new DateTime($date);
