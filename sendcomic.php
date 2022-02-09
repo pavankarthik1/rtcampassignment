@@ -5,7 +5,7 @@ echo "Hello";
 $con=mysqli_connect(getenv('SERVER'), getenv('dbusername'), getenv('dbpassword'), getenv('dbname'));
 $api='https://c.xkcd.com/random/comic/';
 $head=get_headers($api);
-$n=parse_url(substr($var[15], 10))['path'];
+$n=parse_url(substr($head[15], 10))['path'];
 print_r($n);
 $r=rand(1, str_replace('/', '', $n));
 
