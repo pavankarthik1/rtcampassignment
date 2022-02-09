@@ -14,8 +14,10 @@ $stmt1 = $con->prepare($res);
 $stmt1->bind_result($vas);
 $stmt1->execute();
 $stmt1->fetch();
-echo gettype($vas);
-echo gettype($date);
+$date_input = getDate($date);
+$date_fetch = getDate($vas);
+echo gettype($date_input);
+echo gettype($date_fetch);
 //$diff=$vas->diff($date);
 //echo $diff;
 
