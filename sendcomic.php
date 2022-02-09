@@ -6,8 +6,9 @@ $con=mysqli_connect(getenv('SERVER'), getenv('dbusername'), getenv('dbpassword')
 $api='https://c.xkcd.com/random/comic/';
 $head=get_headers($api);
 $n=parse_url(substr($var[15], 10))['path'];
+echo $n;
 $r=rand(1, str_replace('/', '', $n));
-echo $r;
+
 $api_url="https://xkcd.com/${r}/info.0.json";
 $json_data = file_get_contents($api_url);
 $response_data = json_decode($json_data, true);
