@@ -1,7 +1,7 @@
 <?php
 $timezone = date_default_timezone_get();
 $date=new DateTime(date('Y-m-d H:i:s'));
-$res1=$date->format('Y-m-d H:i:s');
+
 $con=mysqli_connect(getenv('SERVER'), getenv('dbusername'), getenv('dbpassword'), getenv('dbname'));
 #$update=$con->query("INSERT INTO xkcd1(date) VALUES ('$res')");
 /*
@@ -28,7 +28,8 @@ echo gettype($date_fetch1);*/
 $differ=$vas1->diff($date);
 if($differ->format('%i')>=5){
 echo $differ->format('%i')."<br>";
-   $sql = 'UPDATE xkcd1 SET DATE=?';
+   $res1=$date->format('Y-m-d H:i:s');
+   $sql = 'UPDATE xkcd1 SET date=?';
     $stmt1 = $con->prepare($sql);
     $stmt1->bind_param('s',$res1);
     $stmt1->execute();
