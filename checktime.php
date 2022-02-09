@@ -16,8 +16,8 @@ $stmt1->execute();
 $stmt1->fetch();
 echo gettype($vas);
 echo gettype($date);
-$diff=$vas->diff($date);
-echo $diff;
+//$diff=$vas->diff($date);
+//echo $diff;
 
 echo "The current server timezone is: " . $timezone. $date;
 
