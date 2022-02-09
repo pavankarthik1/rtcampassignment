@@ -28,7 +28,7 @@ echo gettype($date_fetch1);*/
 $differ=$vas1->diff($date);
 if($differ->format('%i')>=5){
 echo $differ->format('%i')."<br>";
-   $sql = "UPDATE xkcd1 SET DATE=?";
+   $sql = 'UPDATE xkcd1 SET DATE=?';
     $stmt1 = $con->prepare($sql);
     $stmt1->bind_param('s',$res);
     $stmt1->execute();
