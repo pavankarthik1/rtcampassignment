@@ -23,8 +23,8 @@ $date_fetch = strtotime($vas);
 $date_fetch1 = getDate($date_fetch1); 
 echo gettype($date_input1);
 echo gettype($date_fetch1);*/
-$diff=$date1->diff($date2);
-echo $diff->format('Y-m-d H:i:s');
+#$diff=$date1->diff($date2);
+#echo $diff->format('Y-m-d H:i:s');
 
 echo "The current server timezone is: " . $timezone. $date;
 
