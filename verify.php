@@ -3,6 +3,7 @@
 $con = mysqli_connect(getenv('SERVER'), getenv('dbusername'), getenv('dbpassword'), getenv('dbname'));
 if (isset($_GET['vkey'])) {
     $vkey = $_GET['vkey'];
+    print_r($vkey);
     $query1="select `activation`,`verifykey` from `xkcd` where `activation`= 0 and `verifykey`=? LIMIT 1";
 
      $stmt1 = $con->prepare($query1);
