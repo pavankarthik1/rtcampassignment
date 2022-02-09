@@ -29,7 +29,7 @@ $differ=$vas1->diff($date);
 if($differ->format('%i')>=5){
 echo $differ->format('%i')."<br>";
    $res1=$date->format('Y-m-d H:i:s');
-   $sql = 'UPDATE xkcd1 SET date=?';
+   $sql = 'update xkcd1 SET date = ?';
     $stmt = $con->prepare($sql);
     $stmt->bind_param('s',$res1);
     $stmt->execute();
