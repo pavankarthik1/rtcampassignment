@@ -14,7 +14,8 @@ $stmt1 = $con->prepare($res);
 $stmt1->bind_result($vas);
 $stmt1->execute();
 $stmt1->fetch();
-$vas->format('Y-m-d H:i:s');
+echo gettype($vas);
+echo gettype($date);
 $diff=$vas->diff($date);
 echo $diff;
 
