@@ -5,7 +5,7 @@ if (isset($_GET['vkey'])) {
     $vkey = $_GET['vkey'];
     $query1="select `activation`,`verifykey` from `xkcd` where `activation`= 0 and `verifykey`=? LIMIT 1";
 
-     $stmt1 = $con->prepare($query);
+     $stmt1 = $con->prepare($query1);
      $stmt1->bind_param('s', $vkey);
      $stmt1->store_result();
     if ($stmt1->num_rows == 1) {
