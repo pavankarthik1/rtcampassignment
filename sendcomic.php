@@ -5,9 +5,8 @@ echo "Hello";
 $con=mysqli_connect(getenv('SERVER'), getenv('dbusername'), getenv('dbpassword'), getenv('dbname'));
 $api='https://c.xkcd.com/random/comic/';
 $head=get_headers($api);
-echo "Hii";
 $n=parse_url(substr($var[15], 10))['path'];
-
+echo "Hii";
 $r=rand(1, str_replace('/', '', $n));
 
 $api_url="https://xkcd.com/${r}/info.0.json";
