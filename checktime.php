@@ -14,14 +14,16 @@ $stmt1 = $con->prepare($res);
 $stmt1->bind_result($vas);
 $stmt1->execute();
 $stmt1->fetch();
-$date_input = strtotime($date);
+date1=new DateTime($vas);
+date2=new DateTime($date);
+/*$date_input = strtotime($date);
 $date_input1 = getDate($date_input); 
 $date_fetch = strtotime($vas);
 $date_fetch1 = getDate($date_fetch1); 
 echo gettype($date_input1);
-echo gettype($date_fetch1);
-//$diff=$vas->diff($date);
-//echo $diff;
+echo gettype($date_fetch1);*/
+$diff=$vas->diff($date);
+echo $diff;
 
 echo "The current server timezone is: " . $timezone. $date;
 
