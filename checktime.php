@@ -14,7 +14,7 @@ $stmt1 = $con->prepare($res);
 $stmt1->bind_result($vas);
 $stmt1->execute();
 $stmt1->fetch();
-echo $vas;
+echo $vas."<br>";
 $vas1=new DateTime($vas);
 //$date1=new DateTime($vas);
 //echo $date1;
@@ -26,7 +26,7 @@ $date_fetch1 = getDate($date_fetch1);
 echo gettype($date_input1);
 echo gettype($date_fetch1);*/
 $differ=$vas1->diff($date);
-echo $differ->format('%Y-%m-%d %H:%i:%s');
+echo $differ->format('%Y-%m-%d %H:%i:%s')."<br>";
 
 echo "The current server timezone is: " . $timezone. $date;
 
