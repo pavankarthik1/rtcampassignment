@@ -19,6 +19,7 @@ while ($sql->fetch()) {
 	if(isset($_SERVER['HTTP_HOST'],$_SERVER['HTTP_X_FORWARDED_PROTO'])) {
 	$hs=$_SERVER['HTTP_HOST'];
 	$proto=$_SERVER['HTTP_X_FORWARDED_PROTO'];
+	echo "Hii";
         $key=$verifykey;
         $name=$fname.$lname;
         $message="<head><body>
