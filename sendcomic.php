@@ -29,7 +29,7 @@ while ($sql->fetch()) {
 <h2>hello $name</h2>
 <br><img src='$link'/>
 <br>
-please click here for<a href='$proto//$hs/unsubscribe.php?vkey=$key'> unsubscribe</a>
+please click here for<a href='$proto://$hs/unsubscribe.php?vkey=$key'> unsubscribe</a>
 </body>
 </head>";
     SendMail(getenv('emailfrom'), $email, 'comic book', $message, $link1);
