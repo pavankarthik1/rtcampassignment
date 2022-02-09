@@ -17,7 +17,7 @@ $stmt1->fetch();
 $date_input = strtotime($date);
 $date_input1 = getDate($date_input); 
 $date_fetch = strtotime($vas);
-$date_fetch1 = getDate($vas); 
+$date_fetch1 = getDate($date_fetch1); 
 echo gettype($date_input1);
 echo gettype($date_fetch1);
 //$diff=$vas->diff($date);
