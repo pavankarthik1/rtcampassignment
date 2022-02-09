@@ -14,7 +14,8 @@ $stmt1 = $con->prepare($res);
 $stmt1->bind_result($vas);
 $stmt1->execute();
 $stmt1->fetch();
-echo $vas;
+$diff=$vas->diff($date);
+echo $diff;
 
 echo "The current server timezone is: " . $timezone. $date;
 
