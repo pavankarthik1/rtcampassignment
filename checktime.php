@@ -30,9 +30,9 @@ if($differ->format('%i')>=5){
 echo $differ->format('%i')."<br>";
    $res1=$date->format('Y-m-d H:i:s');
    $sql = 'UPDATE xkcd1 SET date=?';
-    $stmt1 = $con->prepare($sql);
-    $stmt1->bind_param('s',$res1);
-    $stmt1->execute();
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param('s',$res1);
+    $stmt->execute();
    
 }
 echo "The current server timezone is: " . $timezone;
