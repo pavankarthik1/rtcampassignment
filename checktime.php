@@ -12,7 +12,7 @@ $vas1=new DateTime($vas);
 $stmt1->close();
 $differ=$vas1->diff($date);
 if($differ->format('%i')>=5){
-   $res1=$date->format('Y-m-d H:i:s');
+   $res1=$date->format('Y-m-d H:i');
    $sql = 'update xkcd1 SET date = ?';
     $stmt = $con->prepare($sql);
     $stmt->bind_param('s',$res1);
