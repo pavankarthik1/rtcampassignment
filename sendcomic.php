@@ -7,12 +7,13 @@ $api='https://c.xkcd.com/random/comic/';
 $head=get_headers($api);
 $n=parse_url(substr($var[15], 10))['path'];
 $r=rand(1, str_replace('/', '', $n));
+echo $r;
 $api_url="https://xkcd.com/${r}/info.0.json";
 $json_data = file_get_contents($api_url);
 $response_data = json_decode($json_data, true);
 $link =  $response_data["img"]; 
 $link1=base64_encode(file_get_contents($link));// phpcs:ignore 
-echo $r;
+
 $sql = $con->prepare("select * from xkcd where activation = 1");
 $sql->bind_result($fname, $lname, $email, $verifykey,$activation);
 $sql->execute();
