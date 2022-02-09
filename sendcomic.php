@@ -1,7 +1,8 @@
 <?php
 // Send Comic will send random comic for every 5 minutes
+require 'checktime.php';
 require 'mail.php';
-echo "Hello";
+if(check()){
 $con=mysqli_connect(getenv('SERVER'), getenv('dbusername'), getenv('dbpassword'), getenv('dbname'));
 $api='https://c.xkcd.com/random/comic/';
 $head=get_headers($api);
@@ -36,4 +37,5 @@ please click here for<a href='$proto://$hs/unsubscribe.php?vkey=$key'> unsubscri
 }
 }
 $con->close();
+}
 ?>
