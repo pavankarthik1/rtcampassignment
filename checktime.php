@@ -15,9 +15,11 @@ $stmt1->bind_result($vas);
 $stmt1->execute();
 $stmt1->fetch();
 $date_input = strtotime($date);
+$date_input1 = getDate($date_input); 
 $date_fetch = strtotime($vas);
-echo gettype($date_input);
-echo gettype($date_fetch);
+$date_fetch1 = getDate($vas); 
+echo gettype($date_input1);
+echo gettype($date_fetch1);
 //$diff=$vas->diff($date);
 //echo $diff;
 
