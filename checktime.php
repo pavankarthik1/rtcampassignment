@@ -9,7 +9,13 @@ $update=$con->query("INSERT INTO xkcd1(date) VALUES ('$date')");
     $stmt1 = $con->prepare($sql);
     $stmt1->bind_param('s',$date );
     $stmt1->execute();*/
-echo $update;
+$res="select date from xkcd1";
+$stmt1 = $con->prepare($res);
+$stmt1->bind_result($vas);
+$stmt1->execute();
+$stmt1->fetch();
+echo $vas;
+
 echo "The current server timezone is: " . $timezone. $date;
 
 ?>
