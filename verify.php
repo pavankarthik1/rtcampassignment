@@ -12,6 +12,7 @@ if (isset($_GET['vkey'])) {
      $stmt1->store_result();
     if ($stmt1->num_rows == 1) {
         $stmt1->close();
+        echo "Working";
         $query="update `xkcd` set activation =1 where `verifykey`=? LIMIT 1";
         $stmt = $con->prepare($query);
         $stmt->bind_param('s', $vkey);
